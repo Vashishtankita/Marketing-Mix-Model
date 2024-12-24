@@ -1,0 +1,31 @@
+# Explanation of the Marketing Mix Model Script
+This R script analyzes a marketing mix dataset to evaluate the impact of different marketing channels on sales quantity. 
+
+# Below is a breakdown of the script:
+
+1. Setup
+- Install and load necessary packages: The tseries library is installed and loaded for time series operations.
+- Set a random seed: Ensures reproducibility of results using set.seed(1).
+
+2. Data Loading
+- Load the dataset: The dataset mmix_data.csv is loaded using read.csv().
+- Inspect data: Averages of the dataset columns are rounded and listed to get an overview.
+
+3. Feature Engineering
+- Log Transformation: Columns like quantity, price, digital_ad, digital_search, print, and tv are transformed using natural logarithms. This helps to stabilize variance and normalize the data.
+- Lag Variables: Lagged versions of the columns are created (e.g., lln_quantity) to incorporate past data into the analysis.
+- Day of the Week: A new weekdays variable is created based on the date column to capture day-specific effects.
+
+4. Correlation Analysis
+- Correlation Matrix: Selects relevant variables (cor_vars) and calculates the correlation between them. The results are rounded for readability.
+
+5. Combined Digital Spend
+- A new column, ln_digital, is created by summing and log-transforming digital_ad and digital_search variables.
+
+6. Regression Modeling
+- Model Building: A linear regression model (lm()) predicts the log-transformed quantity (ln_quantity) based on lagged variables, price, digital spend, print, TV spend, and weekdays.
+- Model Summary: The summary() function evaluates model performance.
+
+7. Predictions
+- Predict Sales Quantity: Predicted quantities are computed using exp(predict()) to reverse the log transformation.
+- Save Predictions: Results are written to a CSV file (mmix_predicted.csv).
