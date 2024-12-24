@@ -36,3 +36,9 @@ This repository contains an R script for analyzing marketing mix data to underst
 # Results
  - Model Insights: The regression model identifies the most impactful marketing channels.
  - Predicted Sales: Forecasted sales quantities for each observation.
+
+# Tableau Workbooks-
+![image](https://github.com/user-attachments/assets/781dd38b-2884-4457-8efa-6257b7362097)
+![image](https://github.com/user-attachments/assets/7e3d1a61-8792-43b8-a3b5-83938054adad)
+![image](https://github.com/user-attachments/assets/2440ed3d-b9eb-45d6-8e90-a637354ebb1c)
+
